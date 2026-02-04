@@ -17,8 +17,6 @@ from rdkit.DataStructs.cDataStructs import ExplicitBitVect
 from rdkit.ML.Cluster import Butina
 from scipy.spatial.distance import pdist
 
-# from synflownet.envs.graph_building_env import GraphAction, GraphActionType
-
 
 def convert_to_strings_and_ints(input_str):
     tuples_list = ast.literal_eval(input_str)

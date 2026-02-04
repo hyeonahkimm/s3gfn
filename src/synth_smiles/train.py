@@ -32,8 +32,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, get_linear_schedul
 from scoring_function import get_scores, int_div
 from rxnflow.tasks.unidock_vina import VinaReward
 from utils import mutate, diff_mask_molformer
-from synthesis_eval import calculate_molecular_diversity  # synflownet version
-from chem_metrics import mol2sascore, calc_diversity, compute_diverse_top_k  # rxnflow version
+from synthesis_eval import calculate_molecular_diversity  # synflownet version evaluation (for sEH)
+from chem_metrics import mol2sascore, calc_diversity, compute_diverse_top_k  # rxnflow version evaluation (for vina reward)
 from replay_buffer import ReplayBuffer
 from gflownet.utils import sascore
 from gflownet.utils.conditioning import MultiObjectiveWeightedPreferences
