@@ -2,12 +2,12 @@
 
 # Synthesizable Molecular Generation via Soft-constrained GFlowNets with Rich Priors (S3-GFN)
 
-**Official implementation of the paper**  **_Synthesizable SMILES via Soft-constrained GFlowNets with Rich Priors_**
+Official implementation of the paper _"Synthesizable SMILES via Soft-constrained GFlowNets with Rich Priors"_
 
 
-**S3-GFN is a soft-constrained GFlowNet for synthesizable SMILES generation.**
+**TL;DR -** S3-GFN is a soft-constrained GFlowNet for synthesizable SMILES generation.
 
-**_Key features_**
+**Key features**
 - Soft-constrained post-training with contrastive auxiliary loss for synthesizability  
 - Separate replay buffers for positive (synthesizable) and negative (unsynthesizable) samples
 - Compatible with open-source SMILES language models (e.g., GP-MolFormer)
@@ -57,4 +57,4 @@ pip install git+https://github.com/dptech-corp/Uni-Dock.git@1.1.2#subdirectory=u
 
 We reuse the datasets and preprocessing pipeline from RxnFlow.
 
-Please follow the dataset download and preprocessing instructions in the [RxnFlow repository](https://github.com/SeonghwanSeo/RxnFlow).
+Please follow the dataset download and preprocessing instructions in the [RxnFlow](https://github.com/SeonghwanSeo/RxnFlow) repository.
