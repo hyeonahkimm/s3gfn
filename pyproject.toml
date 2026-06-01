@@ -26,7 +26,7 @@ dependencies = [
 
 [project.optional-dependencies]
 unidock = [
-  "openbabel-wheel",
+  "openbabel>=3.2.0",
   "unidock_tools @ git+https://github.com/dptech-corp/Uni-Dock.git@1.1.2#subdirectory=unidock_tools",
 ]
 pmnet = [
