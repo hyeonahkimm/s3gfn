@@ -13,6 +13,7 @@ slurm*
 typings/
 job*
 **/*benchmark*
+oracle
 
 # UV
 uv.lock

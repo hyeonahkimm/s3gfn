@@ -1,0 +1,16 @@
+max_length: 140
+learning_rate: 0.0001
+batch_size: 64
+lr_z: 0.001
+beta: 50
+use_retrosynthesis: true
+max_retro_steps: 3
+retro_env: stock
+use_aux_loss: true
+aux_coefficient: 0.001
+use_ga: false
+with_mutation: false
+ga_mutation_rate: 0.01
+ga_population_size: 64
+ga_query_size: 32
+ga_generations: 2
