@@ -40,6 +40,9 @@ dev = [
 # TODO: finish benchmark setting
 # synbench = ["synbench @ git+https://github.com/SeonghwanSeo/SynBench.git@init"]
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.black]
 line-length = 120
 target-version = ["py310"]

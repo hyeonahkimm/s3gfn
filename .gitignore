@@ -2,6 +2,8 @@ src/gflownet/models/cache/
 data/building_blocks/
 data/envs/
 data/experiments/
+data/LIT-PCBA/
+outputs/
 logs/
 weights/
 wandb*

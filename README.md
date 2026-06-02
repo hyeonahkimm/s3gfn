@@ -58,3 +58,53 @@ pip install git+https://github.com/dptech-corp/Uni-Dock.git@1.1.2#subdirectory=u
 We reuse the datasets and preprocessing pipeline from RxnFlow.
 
 Please follow the dataset download and preprocessing instructions in `data/README.md`.
+
+
+## S3-GFN Training
+
+Run training from the repository root with package-style execution:
+
+```bash
+PYTHONPATH=src python -m s3gfn.train --task seh --training_mode s3gfn --use_retrosynthesis --retro_env stock_hb --retro_steps 3
+```
+
+The retained modes are:
+
+| Mode | Behavior |
+| --- | --- |
+| `s3gfn` | Positive-only RTB with the contrastive auxiliary loss |
+| `reward_shaping` | RTB with synthesizability-masked rewards and no auxiliary loss |
+| `rtb` | Unconstrained RTB baseline |
+
+
+Manual constraint controls for synthesizability filters:
+
+```bash
+--use_retrosynthesis
+--retro_env stock_hb
+--retro_steps 3
+```
+
+The name of `retro_env` should be matched with the name of directory under `data/envs`.
+
+If you don't use retrosynthesis, synthesizability is defined based on SA scores with a threshold (defalut: 4.0).
+
+
+
+## SBDD With Uni-Dock
+
+SBDD requires the optional Uni-Dock installation shown above. Run a docking task with:
+
+```bash
+PYTHONPATH=src python -m s3gfn.train --task vina:aldh1 --training_mode s3gfn --use_retrosynthesis --retro_env stock_hb --retro_steps 3
+```
+
+Task and receptor names are case-insensitive. Each receptor requires:
+
+```text
+data/LIT-PCBA/<RECEPTOR>/protein.pdb
+data/LIT-PCBA/<RECEPTOR>/ligand.mol2
+```
+
+The supported receptors are `ADRB2`, `ALDH1`, `ESR_antago`, `ESR_ago`, `FEN1`, `GBA`, `IDH1`, `KAT2A`, `MAPK1`, `MTORC1`, `OPRK1`, `PKM2`, `PPARG`, `VDR`, and `TP53`.
+
